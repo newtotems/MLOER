@@ -9,22 +9,24 @@ eleventyNavigation:
 
   <section>
 
-<section class="box">sss</section>
-<section class="box">sss</section>
-<section class="box">sss</section>
-<section class="box">sss</section>
-<section class="box">sss</section>
+{% for nft in NFT %}
+{% if nft.visible === true %}
+<section class="box">
+  <p>{{nft.id}}  </p>
+  <div>
+    <img src="/img/{{nft.id}}.jpg">
+    </div>
+    <div>
+    <strong>{{nft.name}}</strong><br>
+    {{nft.date}}</div>
+    </section>
+    {% elif nft.visible === false%}
+<section class="box">
+  soon
+    </section>
+{% endif %}
+{% endfor %}
 
 </section>
 
-</section>
-
-<section>
-{% set maxPosts = collections.posts.length | min(3) %}
-
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
-
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
 </section>

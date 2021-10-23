@@ -105,6 +105,11 @@ article {background: var(--c2); border-radius: var(--rc); padding: 1em; box-shad
 
 /* --  */
 
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 header {
   text-align: center;
 }
@@ -117,6 +122,33 @@ header {
   margin: 1rem;
 }
 
+.box img {
+  margin: 0 auto;
+  display: block;
+}
+
 .intro {
   justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.intro p {
+  text-align: center;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    section {
+      display: block
+    }
+
+    .box {
+      max-width: 100%;
+      margin: 0 auto 10px;
+    }
+
 }
